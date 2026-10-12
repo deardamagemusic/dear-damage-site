@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dear Damage — Music</title>
-    <meta name="description" content="Dear Damage — Rock meets real life. Songs about love, loss, and late nights. Listen on Spotify, follow on TikTok.">
-    <meta property="og:title" content="Dear Damage — Music">
-    <meta property="og:description" content="Rock meets real life. Songs about love, loss, and late nights.">
+    <title>Dear Damage — Pre-save "Still Becoming"</title>
+    <meta name="description" content="Dear Damage — Rock meets real life. Pre-save debut single 'Still Becoming' dropping Friday, October 16.">
+    <meta property="og:title" content="Dear Damage — 'Still Becoming' Pre-Save">
+    <meta property="og:description" content="Debut single drops Friday, October 16. Pre-save on Spotify, Apple Music & more.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -58,7 +58,7 @@
             transform: translateX(-50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(212, 160, 74, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 160, 74, 0.12) 0%, transparent 70%);
             pointer-events: none;
             z-index: 0;
         }
@@ -68,141 +68,203 @@
             z-index: 1;
             max-width: 440px;
             margin: 0 auto;
-            padding: 48px 24px 64px;
+            padding: 44px 20px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* Profile / Logo */
+        /* Profile */
         .profile {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 28px;
             animation: fadeInUp 0.8s ease-out;
         }
 
+        .profile-img-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--amber-dim);
-            box-shadow: 0 0 40px rgba(212, 160, 74, 0.15);
-            margin-bottom: 20px;
-            transition: box-shadow 0.3s ease;
+            box-shadow: 0 0 35px rgba(212, 160, 74, 0.25);
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .profile-img:hover {
-            box-shadow: 0 0 60px rgba(212, 160, 74, 0.25);
+            transform: scale(1.03);
+            box-shadow: 0 0 50px rgba(212, 160, 74, 0.4);
         }
 
         .artist-name {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: 2.3rem;
             font-weight: 700;
             color: var(--amber);
             letter-spacing: 0.02em;
             margin-bottom: 8px;
-            text-shadow: 0 0 40px rgba(212, 160, 74, 0.2);
+            text-shadow: 0 0 30px rgba(212, 160, 74, 0.25);
         }
 
         .tagline {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 300;
             color: var(--cream-muted);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
+            line-height: 1.4;
         }
 
-        /* Now Playing */
-        .now-playing {
+        /* Featured Pre-Save Spotlight Card */
+        .featured-card {
             width: 100%;
-            background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
-            border: 1px solid rgba(212, 160, 74, 0.12);
-            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(37, 37, 48, 0.95), rgba(26, 26, 31, 0.98));
+            border: 1.5px solid var(--amber);
+            border-radius: 18px;
             padding: 20px;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(212, 160, 74, 0.15);
+            animation: fadeInUp 0.8s ease-out 0.15s both, glowPulse 3s ease-in-out infinite;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--amber-glow);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(212, 160, 74, 0.3);
+        }
+
+        .featured-header {
             display: flex;
             align-items: center;
-            gap: 16px;
-            animation: fadeInUp 0.8s ease-out 0.15s both;
-            transition: border-color 0.3s ease;
+            justify-content: space-between;
         }
 
-        .now-playing:hover {
-            border-color: rgba(212, 160, 74, 0.3);
-        }
-
-        .now-playing-art {
-            width: 64px;
-            height: 64px;
-            border-radius: 8px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .now-playing-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .now-playing-label {
-            font-size: 0.7rem;
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--amber);
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            background: rgba(212, 160, 74, 0.12);
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(212, 160, 74, 0.25);
         }
 
-        .now-playing-label::before {
-            content: '';
+        .pulse-dot {
             width: 6px;
             height: 6px;
             background: var(--amber);
             border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 1.8s ease-in-out infinite;
         }
 
-        .now-playing-title {
+        .featured-date {
+            font-size: 0.75rem;
+            color: var(--cream-muted);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .featured-body {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .featured-art {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 1px solid rgba(212, 160, 74, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .featured-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .featured-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.05rem;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--cream);
+            margin-bottom: 2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .now-playing-subtitle {
-            font-size: 0.8rem;
+        .featured-subtitle {
+            font-size: 0.82rem;
             color: var(--cream-muted);
-            margin-top: 2px;
+            margin-bottom: 4px;
         }
 
-        /* Equalizer animation */
-        .equalizer {
+        .featured-platforms {
+            font-size: 0.72rem;
+            color: var(--amber);
+            letter-spacing: 0.02em;
+        }
+
+        .featured-cta-btn {
             display: flex;
-            align-items: flex-end;
-            gap: 2px;
-            height: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, var(--amber), var(--amber-dim));
+            color: #0d0f14;
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(212, 160, 74, 0.3);
         }
 
-        .equalizer span {
-            width: 3px;
-            background: var(--amber);
-            border-radius: 1px;
-            animation: equalize 1.2s ease-in-out infinite;
+        .featured-card:hover .featured-cta-btn {
+            background: linear-gradient(135deg, var(--amber-glow), var(--amber));
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(212, 160, 74, 0.45);
         }
 
-        .equalizer span:nth-child(1) { height: 8px; animation-delay: 0s; }
-        .equalizer span:nth-child(2) { height: 14px; animation-delay: 0.2s; }
-        .equalizer span:nth-child(3) { height: 6px; animation-delay: 0.4s; }
-        .equalizer span:nth-child(4) { height: 18px; animation-delay: 0.1s; }
-        .equalizer span:nth-child(5) { height: 10px; animation-delay: 0.3s; }
+        /* Section Labels */
+        .section-label {
+            width: 100%;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--amber-dim);
+            margin-top: 18px;
+            margin-bottom: 12px;
+            padding-left: 4px;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
 
-        /* Links */
+        /* Links List */
         .links {
             width: 100%;
             display: flex;
@@ -214,19 +276,19 @@
             animation: fadeInUp 0.6s ease-out both;
         }
 
-        .link-item:nth-child(1) { animation-delay: 0.3s; }
-        .link-item:nth-child(2) { animation-delay: 0.4s; }
-        .link-item:nth-child(3) { animation-delay: 0.5s; }
-        .link-item:nth-child(4) { animation-delay: 0.6s; }
-        .link-item:nth-child(5) { animation-delay: 0.7s; }
+        .link-item:nth-child(1) { animation-delay: 0.35s; }
+        .link-item:nth-child(2) { animation-delay: 0.45s; }
+        .link-item:nth-child(3) { animation-delay: 0.55s; }
+        .link-item:nth-child(4) { animation-delay: 0.65s; }
+        .link-item:nth-child(5) { animation-delay: 0.75s; }
 
         .link-btn {
             display: flex;
             align-items: center;
             width: 100%;
-            padding: 16px 20px;
+            padding: 15px 18px;
             background: var(--charcoal);
-            border: 1px solid rgba(212, 160, 74, 0.1);
+            border: 1px solid rgba(212, 160, 74, 0.12);
             border-radius: 12px;
             color: var(--cream);
             text-decoration: none;
@@ -245,22 +307,30 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 160, 74, 0.05), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 160, 74, 0.06), transparent);
             transition: left 0.5s ease;
         }
 
         .link-btn:hover {
             border-color: var(--amber-dim);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 160, 74, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(212, 160, 74, 0.15);
         }
 
         .link-btn:hover::before {
             left: 100%;
         }
 
-        .link-btn:active {
-            transform: translateY(0);
+        /* Highlighted Pre-save Button in Links */
+        .link-btn.highlight {
+            border: 1.5px solid var(--amber);
+            background: linear-gradient(135deg, rgba(37, 37, 48, 0.95), rgba(26, 26, 31, 0.98));
+            box-shadow: 0 4px 18px rgba(212, 160, 74, 0.15);
+        }
+
+        .link-btn.highlight:hover {
+            border-color: var(--amber-glow);
+            box-shadow: 0 8px 26px rgba(212, 160, 74, 0.28);
         }
 
         .link-icon {
@@ -270,7 +340,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 16px;
+            margin-right: 14px;
             flex-shrink: 0;
             font-size: 1.2rem;
         }
@@ -283,6 +353,7 @@
 
         .link-text {
             flex: 1;
+            min-width: 0;
         }
 
         .link-text-main {
@@ -297,9 +368,22 @@
             margin-top: 2px;
         }
 
+        .badge-pill {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: var(--amber);
+            color: #0d0f14;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
         .link-arrow {
             color: var(--cream-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
@@ -308,27 +392,14 @@
             color: var(--amber);
         }
 
-        /* Featured section */
-        .section-label {
-            width: 100%;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--amber-dim);
-            margin-top: 36px;
-            margin-bottom: 16px;
-            padding-left: 4px;
-            animation: fadeInUp 0.6s ease-out 0.8s both;
-        }
-
         /* Bio */
         .bio {
             width: 100%;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(212, 160, 74, 0.08);
-            animation: fadeInUp 0.6s ease-out 1s both;
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(212, 160, 74, 0.1);
+            animation: fadeInUp 0.6s ease-out 0.8s both;
         }
 
         .bio p {
@@ -346,22 +417,22 @@
 
         /* Footer */
         .footer {
-            margin-top: 48px;
+            margin-top: 40px;
             text-align: center;
-            animation: fadeInUp 0.6s ease-out 1.1s both;
+            animation: fadeInUp 0.6s ease-out 0.9s both;
         }
 
         .footer p {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             color: rgba(200, 192, 180, 0.4);
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(18px);
             }
             to {
                 opacity: 1;
@@ -371,22 +442,25 @@
 
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.8); }
+            50% { opacity: 0.35; transform: scale(0.85); }
         }
 
-        @keyframes equalize {
-            0%, 100% { height: 4px; }
-            50% { height: 18px; }
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 160, 74, 0.12);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 32px rgba(212, 160, 74, 0.28);
+            }
         }
 
-        /* Responsive */
         @media (max-width: 480px) {
             .container {
-                padding: 36px 20px 48px;
+                padding: 36px 18px 48px;
             }
 
             .artist-name {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
 
             .profile-img {
@@ -402,53 +476,66 @@
     <main class="container">
         <!-- Profile -->
         <div class="profile">
-            <img 
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%231a1a1f'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='28' fill='%23d4a04a'%3EDD%3C/text%3E%3C/svg%3E" 
-                alt="Dear Damage" 
-                class="profile-img"
-                id="profile-image"
-            >
+            <div class="profile-img-wrap">
+                <img 
+                    src="data:image/jpeg;base64,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" 
+                    alt="Dear Damage Logo" 
+                    class="profile-img"
+                    id="profile-image"
+                >
+            </div>
             <h1 class="artist-name">Dear Damage</h1>
             <p class="tagline">Rock meets real life. Songs about love, loss & late nights.</p>
         </div>
 
-        <!-- Now Playing -->
-        <div class="now-playing" id="now-playing">
-            <img 
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23252530'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='14' fill='%23d4a04a'%3E♪%3C/text%3E%3C/svg%3E" 
-                alt="Album Art" 
-                class="now-playing-art"
-                id="now-playing-art"
-            >
-            <div class="now-playing-info">
-                <div class="now-playing-label">Latest Release</div>
-                <div class="now-playing-title" id="now-playing-title">First Single Coming Soon</div>
-                <div class="now-playing-subtitle">Dear Damage</div>
+        <!-- Featured Spotlight: Pre-Save "Still Becoming" -->
+        <a href="https://share.amuse.io/track/dear-damage-still-becoming" class="featured-card" id="hero-presave" target="_blank" rel="noopener">
+            <div class="featured-header">
+                <div class="featured-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Debut Single</span>
+                </div>
+                <span class="featured-date">Drops Friday, Oct 16</span>
             </div>
-            <div class="equalizer">
-                <span></span><span></span><span></span><span></span><span></span>
+            <div class="featured-body">
+                <img 
+                    src="data:image/jpeg;base64,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" 
+                    alt="Still Becoming Cover Art" 
+                    class="featured-art"
+                    id="featured-art"
+                >
+                <div class="featured-info">
+                    <h2 class="featured-title">Still Becoming</h2>
+                    <p class="featured-subtitle">Dear Damage</p>
+                    <p class="featured-platforms">Spotify · Apple Music · Tidal · & more</p>
+                </div>
             </div>
-        </div>
+            <div class="featured-cta-btn">
+                <span>PRE-SAVE ON SPOTIFY & APPLE MUSIC</span>
+                <span>→</span>
+            </div>
+        </a>
 
-        <!-- Music Links -->
-        <div class="section-label">Listen</div>
+        <!-- Music & Pre-Save Links -->
+        <div class="section-label">Music & Pre-Save</div>
         <div class="links" id="music-links">
             <div class="link-item">
-                <a href="#" class="link-btn" id="link-spotify" target="_blank" rel="noopener">
+                <a href="https://share.amuse.io/track/dear-damage-still-becoming" class="link-btn highlight" id="link-spotify" target="_blank" rel="noopener">
                     <div class="link-icon spotify">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
                     </div>
                     <div class="link-text">
-                        <span class="link-text-main">Spotify</span>
-                        <span class="link-text-sub">Stream my music</span>
+                        <span class="link-text-main">Pre-save "Still Becoming"</span>
+                        <span class="link-text-sub">Drops October 16 · Direct Amuse SmartLink</span>
                     </div>
+                    <span class="badge-pill">PRE-SAVE</span>
                     <span class="link-arrow">→</span>
                 </a>
             </div>
         </div>
 
         <!-- Social Links -->
-        <div class="section-label">Follow</div>
+        <div class="section-label">Follow & Connect</div>
         <div class="links" id="social-links">
             <div class="link-item">
                 <a href="https://tiktok.com/@deardamage" class="link-btn" id="link-tiktok" target="_blank" rel="noopener">
@@ -457,7 +544,19 @@
                     </div>
                     <div class="link-text">
                         <span class="link-text-main">TikTok</span>
-                        <span class="link-text-sub">Behind the music</span>
+                        <span class="link-text-sub">@deardamage · Behind the music & lyrics</span>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+            <div class="link-item">
+                <a href="https://instagram.com/deardamagemusic" class="link-btn" id="link-instagram" target="_blank" rel="noopener">
+                    <div class="link-icon instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </div>
+                    <div class="link-text">
+                        <span class="link-text-main">Instagram</span>
+                        <span class="link-text-sub">@deardamagemusic · Updates & reels</span>
                     </div>
                     <span class="link-arrow">→</span>
                 </a>
@@ -470,18 +569,6 @@
                     <div class="link-text">
                         <span class="link-text-main">Suno</span>
                         <span class="link-text-sub">Where the music is made</span>
-                    </div>
-                    <span class="link-arrow">→</span>
-                </a>
-            </div>
-            <div class="link-item">
-                <a href="https://instagram.com/deardamagemusic" class="link-btn" id="link-instagram" target="_blank" rel="noopener">
-                    <div class="link-icon instagram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    </div>
-                    <div class="link-text">
-                        <span class="link-text-main">Instagram</span>
-                        <span class="link-text-sub">@deardamagemusic</span>
                     </div>
                     <span class="link-arrow">→</span>
                 </a>
@@ -521,46 +608,17 @@
         document.addEventListener('mousemove', (e) => {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
-            glow.style.left = `${x * 100}%`;
-            glow.style.top = `${y * 100 - 20}%`;
+            glow.style.left = ${x * 100}%;
+            glow.style.top = ${y * 100 - 20}%;
         });
 
-        // Add click tracking (you can replace with your analytics)
-        document.querySelectorAll('.link-btn').forEach(btn => {
+        // Add click tracking
+        document.querySelectorAll('.link-btn, .featured-card').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const linkId = btn.id;
-                console.log(`Link clicked: ${linkId}`);
-                // Add your analytics tracking here
+                console.log(Link clicked: );
             });
         });
-
-        /* 
-         * ===== SETUP INSTRUCTIONS =====
-         * 
-         * 1. Replace the "#" in each <a href="#"> with your actual URLs:
-         *    - link-spotify:    Your Spotify artist page URL
-         *    - link-tiktok:     Your TikTok profile URL (e.g., https://tiktok.com/@deardamage)
-         *    - link-suno:       Your Suno profile URL
-         *    - link-instagram:  Your Instagram URL
-         *    - link-youtube:    Your YouTube channel URL
-         *
-         * 2. Replace the profile-img src with your logo image
-         * 3. Replace the now-playing-art src with your album art
-         * 4. Update "First Single Coming Soon" with your track name when ready
-         *
-         * TO HOST FOR FREE:
-         * Option A: GitHub Pages
-         *   - Create a GitHub repo, push this file, enable Pages in settings
-         *
-         * Option B: Netlify Drop
-         *   - Go to https://app.netlify.com/drop
-         *   - Drag & drop the folder containing this file
-         *   - Get a free URL instantly!
-         *
-         * Option C: Cloudflare Pages
-         *   - Connect your GitHub repo at https://pages.cloudflare.com
-         *   - Free custom domain support
-         */
     </script>
 </body>
 </html>
